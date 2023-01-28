@@ -26,7 +26,7 @@ Use this filtering by adding the tag `-antialiased filter [n > 0]` to filter wit
 Example: `-antialiased filter 3`
 
 ### Jittering
-Use jittering by adding the tag `-antialiased jitter [n > 0]` to jitter with by taking random samples using `n x n` subpixels.
+Use jittering by adding the tag `-antialiased jitter [n > 0]` to jitter using random samples of  `n x n` subpixels.
 
 Example: `-antialiased jitter 3`
 
