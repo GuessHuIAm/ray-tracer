@@ -1,5 +1,24 @@
+# Get Running:
+1. At the root, run `cmake ./`.
+2. Then, run `make`.
+3. You should have an executable program called `ray_tracer` in your folder now!
+4. To run the program, run `./ray_tracer` with the following tags:
+    - `-input [scene_name].txt`
+    
+        For example, `-input scene07_arch.txt`. Sample scenes can be found in the `assets` folder.
 
-# Some Extras:
+    - `-output [file_name].png.txt`
+        
+        Give it any spaceless file name you want.
+
+    - `-size [length] [width]`
+    - `-shadows`
+
+        If you desire shadows in your scene.
+    - `-bounces [num_bounces]`
+        If you want the light to bounce throughout the scene. Good for transparent objects.
+
+# Some Extra Tags:
 ## Antialiasing
 ### Grid Filtering
 Use this filtering by adding the tag `-antialiased filter [n > 0]` to filter with a `n x n` grid.
