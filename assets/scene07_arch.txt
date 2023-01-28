@@ -1,0 +1,98 @@
+Camera {
+    center -5.3 8.0 8.3
+    direction .4 -.5 -.75
+    up 0 1 0
+    fov 25
+}
+
+
+Background {
+    color 0 0 0
+    ambient_light 0.1 0.1 0.1
+    cube_map tex/church
+}
+
+Materials {
+    Material {
+        diffuse 0.5 0.5 0.5
+        specular 0.4 0.4 0.4
+    }
+
+    Material {
+      diffuse 0.9 0 0
+    }
+
+    Material {
+      diffuse 0 0.9 0
+    }
+
+    Material {
+      diffuse 0 0 0.9
+    }
+}
+
+Scene {
+    Node {
+        Component<Material> { index 0 }
+        Component<Object> {
+            type plane
+            normal 0 1 0
+            offset 0
+        }
+    }
+    Node {
+        Component<Material> { index 1 }
+        Transform {
+            translate -0.8 0 -2
+            scale 0.25 1.0 0.25
+            y_rotate 45
+            translate 0 1 0
+        }
+        Component<Object> {
+            type mesh
+            obj_file models/cube2.obj
+        }
+    }
+    Node {
+        Component<Material> { index 2 }
+        Transform {
+            translate 0 2 -2
+            scale 1.6 0.3 0.1
+            translate 0 1 0
+        }
+        Component<Object> {
+            type mesh
+            obj_file models/cube2.obj
+        }
+    }
+    Node {
+        Component<Material> { index 3 }
+        Transform {
+            translate 0.8 0 -2
+            scale 0.25 1.0 0.25
+            y_rotate 45
+            translate 0 1 0
+        }
+        Component<Object> {
+            type mesh
+            obj_file models/cube2.obj
+        }
+    }
+
+    Node {
+        Component<Light> {
+            type directional
+            direction -0.3 -0.5 -0.5
+            color 0.3 0.3 0.3
+        }
+    }
+    Node {
+        Transform { translate -2 4 -2 }
+        Component<Light> {
+            type point
+            color 1.4 1.4 1.4
+            attenuation 0.7
+        }
+    }
+}
+

@@ -1,0 +1,38 @@
+Camera {
+    center 0 0 10
+    direction 0 0 -1
+    up 0 1 0
+    fov 20
+}
+
+Background {
+    color 0.2 0 0.6
+    ambient_light 0 0 0
+}
+
+Materials {
+    Material { diffuse 1 1 1 }
+}
+
+Scene {
+    Node {
+        Transform {
+            z_rotate 45
+            scale 1 0.2 1
+        }
+        Component<Material> { index 0 }
+        Component<Object> {
+            type sphere
+            radius 1
+        }
+    }
+    Node {
+        Component<Light> {
+            type directional
+            direction -0.2 -0.2 -1
+            color 1 1 1
+        }
+    }
+}
+
+

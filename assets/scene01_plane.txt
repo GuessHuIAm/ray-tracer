@@ -1,0 +1,85 @@
+Background {
+    color 0 0 0
+    ambient_light 0.1 0.1 0.1
+}
+
+Camera {
+    center 0 0 10
+    direction 0 0 -1
+    up 0 1 0
+    fov 30
+}
+
+Materials {
+    Material {
+        diffuse 1 0 0
+        specular 1 1 1
+        shininess 20
+    }
+    Material { diffuse 0 1 0 }
+    Material { diffuse 0 0 1 }
+    Material {
+        diffuse 1 1 1
+        specular 1 1 1
+        shininess 20
+    }
+}
+
+Scene {
+    Node {
+        Transform { translate 0 5 5 }
+        Component<Light> {
+            type point
+            color 0.9 0.9 0.9
+            attenuation 0.025
+        }
+    }
+    Node {
+        Component<Material> { index 0 }
+        Component<Object> {
+            type sphere
+            radius 1
+        }
+    }
+    Node {
+        Transform { translate 1 1 1 }
+        Component<Material> { index 1 }
+        Component<Object> {
+            type sphere
+            radius 0.75
+        }
+    }
+    Node {
+        Transform { translate -1 -1 -1 }
+        Component<Material> { index 1 }
+        Component<Object> {
+            type sphere
+            radius 0.75
+        }
+    }
+    Node {
+        Transform { translate -1 1 -1 }
+        Component<Material> { index 2 }
+        Component<Object> {
+            type sphere
+            radius 0.75
+        }
+    }
+    Node {
+        Transform { translate 1 -1 -1 }
+        Component<Material> { index 2 }
+        Component<Object> {
+            type sphere
+            radius 0.75
+        }
+    }
+    Node {
+        Component<Material> { index 3 }
+        Component<Object> {
+            type plane
+            normal 0 1 0
+            offset -2
+        }
+    }
+}
+

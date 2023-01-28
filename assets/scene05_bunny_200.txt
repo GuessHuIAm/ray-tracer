@@ -1,0 +1,43 @@
+Camera {
+    center 0.35 0.6 0.8
+    direction -0.5 -0.5 -1
+    up 0 1 0
+    fov 25
+}
+
+Background {
+    color 0.1 0.7 0.2
+    ambient_light 0.1 0.1 0.1
+}
+
+Materials {
+    Material {
+        diffuse 0.79 0.66 0.44
+        specular 1 1 1
+        shininess 20
+    }
+}
+
+Scene {
+    Node {
+        Component<Material> { index 0 }
+        Component<Object> {
+            type mesh
+            obj_file models/bunny_200.obj
+        }
+    }
+    Node {
+        Component<Light> {
+            type directional
+            direction 0.2 -1 -0.4
+            color 0.7 0.7 0.7
+        }
+    }
+    Node {
+        Component<Light> {
+            type directional
+            direction -7 -5 -5
+            color 0.3 0.3 0.3
+        }
+    }
+}

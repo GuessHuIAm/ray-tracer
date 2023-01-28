@@ -1,0 +1,77 @@
+Camera {
+    center 13 11 30
+    direction -.16 -.12 -.5
+    up 0 1 0
+    fov 30
+}
+
+Background {
+    color 0 0 0
+    ambient_light 0.2 0.2 0.2
+}
+
+Materials {
+    Material { diffuse 1 0 0 }
+    Material { diffuse 0 1 0 }
+    Material { diffuse 0 0 1 }
+    Material { diffuse 1 1 1 }
+}
+
+Scene {
+    Node {
+        Node {
+            Transform {
+                translate 5 0 0
+                    scale 5 0.2 0.2
+            }
+            Component<Material> { index 0 }
+            Component<Object> {
+                type mesh
+                    obj_file models/cube2.obj
+            }
+        }
+        Node {
+            Transform {
+                translate 0 5 0
+                scale 0.2 5 0.2
+            }
+            Component<Material> { index 1 }
+            Component<Object> {
+                type mesh
+                    obj_file models/cube2.obj
+            }
+        }
+        Node {
+            Transform {
+                translate 0 0 5
+                    scale 0.2 0.2 5
+            }
+            Component<Material> { index 2 }
+            Component<Object> {
+                type mesh
+                    obj_file models/cube2.obj
+            }
+        }
+    }
+    Node {
+        Component<Material> { index 3 }
+        Transform {
+            translate  4 3 1
+            x_rotate  10
+            y_rotate  20
+            z_rotate  30
+            scale  2 0.5 3
+        }
+        Component<Object> {
+            type mesh
+                obj_file models/cube2.obj
+        }
+    }
+    Node {
+        Component<Light> {
+            type directional
+            direction -0.2 -0.4 -0.8
+            color 0.8 0.8 0.8
+        }
+    }
+}
