@@ -259,7 +259,6 @@ bool Octree::IntersectSubtree(uint8_t aa,
 
 bool Octree::Intersect(const Ray& ray, float t_min, HitRecord& record) {
   glm::vec3 ray_dir = ray.GetDirection();
-  // TODO: does ray_dir need to be unit?
   glm::vec3 ray_origin = ray.GetOrigin();
 
   uint8_t aa = 0;
